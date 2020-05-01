@@ -21,7 +21,7 @@ def main():
     for strategy in STRATEGIES:
         if strategy.identify(git_cmd):
             print(strategy)
-            strategy.undo(git_cmd, repo=None)
+            strategy.undo(git_cmd, repo)
     else:
         print("NOT FOUND")
 

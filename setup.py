@@ -7,5 +7,6 @@ setup(
         'console_scripts': [
             'git-undo=undo.main:main'
         ]
-    }
+    },
+    install_requires=['GitPython']
 )

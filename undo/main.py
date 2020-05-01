@@ -1,8 +1,7 @@
 import os
 import re
-import enum
-
 from undo.strategies import STRATEGIES
+import git
 
 
 def get_latest_git_command():
@@ -16,6 +15,7 @@ def get_latest_git_command():
 
 
 def main():
+    repo = git.Repo(search_parent_directories=True)
     git_cmd = get_latest_git_command()
     print(git_cmd)
     for strategy in STRATEGIES:
@@ -24,3 +24,7 @@ def main():
             strategy.undo(git_cmd, repo=None)
     else:
         print("NOT FOUND")
+
+
+if __name__ == '__main__':
+    main()

@@ -11,6 +11,7 @@ def test_undo_strategy_undoes_commit(repo: git.Repo):
     head_before_commit = repo.head
     repo.index.commit('commit to revert')
     Commit.undo('git commit', repo)
+    
     assert repo.head == head_before_commit
     assert empty_file.name in {name for name, stage in repo.index.entries}
     assert os.path.isfile(empty_file)

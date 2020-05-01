@@ -10,7 +10,7 @@ def test_undo_strategy_undoes_commit(repo: git.Repo):
     empty_file = add_empty_file(repo, 'commit_strategy_undo')
     head_before_commit = repo.head
     repo.index.commit('commit to revert')
-    
+
     Commit.undo('git commit', repo)
 
     assert repo.head == head_before_commit

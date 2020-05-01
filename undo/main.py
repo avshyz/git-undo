@@ -1,5 +1,6 @@
 import os
 import re
+import git
 
 
 def get_latest_git_command():
@@ -13,3 +14,8 @@ def get_latest_git_command():
 
 def main():
     print('hello world!')
+    repo = git.Repo(search_parent_directories=True)
+
+
+if __name__ == '__main__':
+    main()

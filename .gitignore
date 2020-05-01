@@ -1,3 +1,4 @@
 .idea/
 *.pyc
 venv/
+git_undo.egg-info

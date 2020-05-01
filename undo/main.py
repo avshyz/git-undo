@@ -3,7 +3,7 @@ import re
 
 
 def get_latest_git_command():
-    with open('~/.zsh_history') as history_file:
+    with open(os.environ.get('HISTFILE')) as history_file:
         for history_line in history_file.readlines()[::-1]:
             # TODO add aliases expansion
             if "git" in history_line:

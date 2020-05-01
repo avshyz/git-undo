@@ -22,8 +22,9 @@ def main():
         if strategy.identify(git_cmd):
             print(strategy)
             strategy.undo(git_cmd, repo)
+            break
     else:
-        print("NOT FOUND")
+        print("Unrecognized command")
 
 
 if __name__ == '__main__':
